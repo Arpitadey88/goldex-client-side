@@ -1,0 +1,19 @@
+.add-product{
+    background-color: azure;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 50px 200px;
+    padding:20px 50px;
+}
+ .add-product form{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .add-product form input, textarea{
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+ } 

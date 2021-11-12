@@ -1,0 +1,18 @@
+.add-review{
+    background-color: azure;
+    border: 1px;
+    
+}
+ .add-review form{
+    margin-top: 15px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .add-review form input {
+    width: 80%;
+    margin: 10px;
+ } 
+ 
