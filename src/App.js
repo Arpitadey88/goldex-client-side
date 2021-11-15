@@ -8,10 +8,15 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import ExploreGallery from './Pages/Home/ExploreGallery/ExploreGallery';
-import AddProduct from './Pages/AddProduct/AddProduct';
+// import AddProduct from './Pages/AddProduct/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
-import Review from './Pages/Home/Review/Review/Review';
+// import Review from './Pages/Home/Review/Review/Review';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+// import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
+// import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+// import Admin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+// import Reviews from './Pages/Dashboard/Reviews/Reviews';
+// import Payment from './Pages/Dashboard/Payment/Payment';
 
 function App() {
   return (
@@ -29,9 +34,24 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/addProduct">
+            {/* <Route path="/addProduct">
               <AddProduct />
             </Route>
+            <Route path="/manageOrder">
+              <ManageOrder />
+            </Route>
+            <Route path="/myOrder">
+              <MyOrder></MyOrder>
+            </Route>
+            <Route path="/admin">
+              <Admin />
+            </Route>
+            <Route path="/addReviews">
+              <Reviews />
+            </Route>
+            <Route path="/payment">
+              <Payment />
+            </Route> */}
             <PrivateRoute path="/purchase/:productId">
               <Purchase />
             </PrivateRoute>
@@ -41,9 +61,9 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <Route path="/review">
+            {/* <Route path="/review">
               <Review></Review>
-            </Route>
+            </Route> */}
             <Route exact path="/">
               <Home />
             </Route>

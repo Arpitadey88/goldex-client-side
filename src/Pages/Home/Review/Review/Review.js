@@ -5,11 +5,33 @@ const Review = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://powerful-caverns-46584.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])
-    // const reviews = [
+
+
+    return (
+        <div style={{ backgroundColor: 'whiteSmoke' }} className="m-4 border p-3 ">
+            <h2 className="text-center" style={{ color: 'orange' }}>What Our Customer Says </h2>
+            <div className="row row-cols-1 row-cols-md-3">
+                {
+                    reviews.map(review => <SingleReview
+                        key={review.id}
+                        review={review}>
+                    </SingleReview>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default Review;
+
+
+
+
+ // const reviews = [
 
     //     {
     //         id: 1,
@@ -33,20 +55,3 @@ const Review = () => {
 
     //     },
     // ]
-
-    return (
-        <div style={{ backgroundColor: 'whiteSmoke' }} className="m-4 border p-3 ">
-            <h2 className="text-center" style={{ color: 'orange' }}>What Our Customer Says </h2>
-            <div className="row row-cols-1 row-cols-md-3">
-                {
-                    reviews.map(review => <SingleReview
-                        key={review.id}
-                        review={review}>
-                    </SingleReview>)
-                }
-            </div>
-        </div>
-    );
-};
-
-export default Review;

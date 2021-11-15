@@ -10,7 +10,7 @@ const Home = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-caverns-46584.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.slice(1, 7)));
     }, [])
@@ -33,7 +33,7 @@ const Home = () => {
             </div>
 
             <Review></Review>
-            <AddReview></AddReview>
+            {/* <AddReview></AddReview> */}
 
         </div>
     );

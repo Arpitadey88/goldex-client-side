@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Product = (props) => {
     const { _id, name, description, img, price } = props.product;
     return (
-        <div style={{ width: '440px' }} className="col mx-2">
+        <div style={{ width: '470px' }} className="col mx-2">
             <Card className="p-2 m-3" style={{ height: '470px', backgroundColor: 'ghostWhite' }}>
                 <Card.Img className="border border-2" style={{ height: '240px', width: '360px' }} variant="top" src={img} />
                 <Card.Body>

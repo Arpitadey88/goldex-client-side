@@ -8,8 +8,10 @@ const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError } = useAuth();
 
+    const { signInUsingGoogle } = useAuth();
     const location = useLocation();
     const history = useHistory();
+    const redirect_uri = location.state?.from || './home'
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -23,6 +25,13 @@ const Login = () => {
     const handleLoginSubmit = e => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
+    }
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then((result) => {
+                history.push(redirect_uri);
+            })
     }
 
     return (
@@ -59,7 +68,7 @@ const Login = () => {
                     {isLoading && <div className=" text-center"><Spinner animation="border" variant="info" /></div>}
 
                     {user?.email && <Alert variant="success">
-                        Login Succesasfully !!
+                        Login Successfully !!
                     </Alert>}
 
                     {authError && <Alert variant="danger">{authError}</Alert>}
@@ -67,7 +76,7 @@ const Login = () => {
                     <div className="text-center fw-bold">-------------------OR--------------------</div>
 
                     <div className="text-center my-4">
-                        <Button className="mt-1" variant="danger" size="lg" active>Google Sign In</Button>
+                        <Button onClick={handleGoogleLogin} className="mt-1" variant="danger" size="lg" active>Google Sign In</Button>
 
                         <p className="my-2">new user? Please <Link to="/register">Register</Link></p>
                     </div>

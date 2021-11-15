@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../watch-img/logo.png';
@@ -33,16 +33,29 @@ const Header = () => {
                         color: 'orange'
                     }}>Reviews</h5></Nav.Link>
 
-                    <Nav.Link as={HashLink} to="/dashboard"><h5 style={{
+
+                    <Nav.Link as={HashLink} to="#login"><h5 style={{
                         color: 'orange'
-                    }}>Dashboard</h5></Nav.Link>
+                    }}>{user?.displayName}</h5></Nav.Link>
 
                     {
                         user?.email ?
-                            <Button onClick={logOut} className="px-3 py-1" style={{ backgroundColor: 'orange', color: 'white', borderRadius: '3px' }}><h5><b>Logout</b></h5></Button>
+                            <div>
+                                <div className="row">
+                                    <div className="col-md-6 py-1">
+                                        <Nav.Link as={HashLink} to="/dashboard"><h5 style={{
+                                            color: 'orange'
+                                        }}>Dashboard</h5></Nav.Link>
+                                    </div>
+
+                                    <div className="col-md-6"><Nav.Link>
+                                        <Button onClick={logOut} className="pe-4 py-1" style={{ backgroundColor: 'orange', color: 'white', borderRadius: '3px' }}><h5><b>Logout</b></h5></Button>
+                                    </Nav.Link></div>
+                                </div>
+                            </div>
                             :
                             <NavLink style={{ color: 'white', borderRadius: '3px' }} to="/login">
-                                <Button className="px-3 py-1" style={{ backgroundColor: 'orange' }}><h5><b>Login</b></h5></Button>
+                                <Button className="pe-4 py-1" style={{ backgroundColor: 'orange' }}><h5><b>Login</b></h5></Button>
                             </NavLink>
                     }
 

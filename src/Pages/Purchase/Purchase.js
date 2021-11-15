@@ -1,25 +1,31 @@
 import React, { useEffect } from 'react';
 import { useRef, useState } from 'react';
 import { useParams } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 import './Purchase.css';
 
 
 const Purchase = () => {
+    const { user } = useAuth();
     const { productId } = useParams();
     const [product, setProduct] = useState({});
 
     const nameRef = useRef();
     const emailRef = useRef();
     const numberRef = useRef();
+    const productRef = useRef();
+
 
     const handleAddProduct = e => {
         const userName = nameRef.current.value;
         const userEmail = emailRef.current.value;
         const userNumber = numberRef.current.value;
+        const userProduct = productRef.current.value;
 
-        const newOrder = { userName, userEmail, userNumber };
+        const newOrder = { userName, userEmail, userNumber, userProduct };
+        // console.log(newOrder);
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://powerful-caverns-46584.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +46,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://powerful-caverns-46584.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
 
@@ -66,15 +72,16 @@ const Purchase = () => {
                     <div className="col-md-6 submit-order border">
                         <h2 className="text-center" style={{ color: 'chocolate' }}>Confirm Your Order</h2>
                         <form className="border mx-3 py-5" onSubmit={handleAddProduct}>
-                            <input type="text" defaultValue={product.name} />
+
+                            <input type="text" ref={productRef} defaultValue={product.name} />
                             <br />
-                            <input type="text" ref={nameRef} placeholder="Enter Name" />
+                            <input type="text" ref={nameRef} defaultValue={user.displayName} />
                             <br />
-                            <input type="email" ref={emailRef} name="" id="" placeholder="Enter Your Email" />
+                            <input type="email" ref={emailRef} name="" id="" defaultValue={user.email} />
                             <br />
                             <input type="number" ref={numberRef} placeholder="Enter Phone Number" />
                             <br />
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="Order Now" />
                         </form>
                     </div>
                 </div>

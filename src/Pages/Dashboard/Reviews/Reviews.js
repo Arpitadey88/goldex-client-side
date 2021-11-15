@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
-import './AddReview.css';
+import './Reviews.css';
 
-const AddReview = () => {
+const Reviews = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
@@ -24,6 +24,7 @@ const AddReview = () => {
                 <input {...register("img")} placeholder="image url" />
                 <input {...register("name", { required: true })} placeholder="Your Name" />
                 <textarea {...register("description")} placeholder="Give Feedback" />
+                <input type="number" {...register("star", { min: 1, max: 5 })} placeholder="rating" />
                 {/* <input {...register("description")} /> */}
                 <input type="submit" />
             </form>
@@ -32,4 +33,4 @@ const AddReview = () => {
     );
 };
 
-export default AddReview;
+export default Reviews;

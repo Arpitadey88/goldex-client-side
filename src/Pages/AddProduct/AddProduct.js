@@ -2,13 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddProduct.css';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://powerful-caverns-46584.herokuapp.com/products', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -27,7 +29,9 @@ const AddProduct = () => {
                 <input {...register("price")} placeholder="Price" />
                 <input type="submit" />
             </form>
-
+            <div className="text-center">
+                <Link to="/dashboard"><Button className="mx-5 px-5 py-2 mt-5">Go Dashboard</Button></Link>
+            </div>
         </div>
     );
 };
