@@ -12,13 +12,13 @@ const ExploreGallery = () => {
             <h1 className="text-center my-3"><b>Exclusive <span className="text-warning">Collection</span> Of Watches</b></h1>
             <CardGroup>
                 <Card>
-                    <Card.Img variant="top" src={image1} />
+                    <Card.Img style={{ height: '380px' }} variant="top" src={image1} />
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src={image2} />
+                    <Card.Img style={{ height: '380px' }} variant="top" src={image2} />
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src={image3} />
+                    <Card.Img style={{ height: '380px' }} variant="top" src={image3} />
                 </Card>
             </CardGroup>
             <div className="mt-5">

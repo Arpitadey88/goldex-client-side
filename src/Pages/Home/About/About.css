@@ -1,0 +1,11 @@
+.cart{
+    box-shadow: 8px 8px 12px gray;
+    transition: 0.6s;
+}
+.cart-img{
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px gray;
+}
+.cart:hover {
+    border: 1px solid lightBlue;
+  }

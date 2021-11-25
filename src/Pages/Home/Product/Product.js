@@ -2,23 +2,29 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
+import './Product.css';
 
 
 const Product = (props) => {
     const { _id, name, description, img, price } = props.product;
     return (
-        <div style={{ width: '470px' }} className="col mx-2">
-            <Card className="p-2 m-3" style={{ height: '470px', backgroundColor: 'ghostWhite' }}>
-                <Card.Img className="border border-2" style={{ height: '240px', width: '360px' }} variant="top" src={img} />
-                <Card.Body>
-                    <h4 style={{ color: 'chocolate' }}>{name}</h4>
-                    <h6 style={{ color: 'chocolate' }}>{price}</h6>
-                    <p style={{ color: 'slategrey' }}>{description}</p>
-                    {/* <button className="btn btn-primary"> Buy Now </button> */}
-                    <Link to={`/purchase/${_id}`}><button className="btn btn-primary"> Buy Now </button></Link>
-                </Card.Body>
-            </Card>
-        </div>
+        <div style={{ width: '400px' }} className="mx-5 my-4 p-0 border cart rounded">
+
+            <div className="" ><img className="px-5 py-2 cart w-100 bg-dark rounded" style={{
+                height: '240px'
+            }} src={img} alt="" />
+            </div>
+
+            <div className="p-3">
+                <h4 style={{ color: 'chocolate' }}> <b>{name}</b> </h4>
+                <h5 style={{ color: 'slategrey' }}>{description}</h5>
+                <h4 style={{ color: 'chocolate' }}> <b>{price}</b> </h4>
+            </div>
+            <div className="">
+                <Link to={`/purchase/${_id}`}><button style={{ backgroundColor: 'sienna', color: 'white' }} className="btn w-100"><h5> Buy Now </h5></button></Link>
+            </div>
+
+        </div >
     );
 };
 

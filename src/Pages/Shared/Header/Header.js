@@ -29,7 +29,7 @@ const Header = () => {
                         color: 'orange'
                     }}>Explore Gallary</h5></Nav.Link>
 
-                    <Nav.Link as={HashLink} to="/review"><h5 style={{
+                    <Nav.Link as={HashLink} to="#review"><h5 style={{
                         color: 'orange'
                     }}>Reviews</h5></Nav.Link>
 

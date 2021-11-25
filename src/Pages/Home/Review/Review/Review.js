@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleReview from '../SingleReview/SingleReview';
+import './Review.css';
 
 const Review = () => {
     const [reviews, setReviews] = useState([]);
@@ -12,7 +13,7 @@ const Review = () => {
 
 
     return (
-        <div style={{ backgroundColor: 'whiteSmoke' }} className="m-4 border p-3 ">
+        <div style={{ backgroundColor: 'whiteSmoke' }} className="p-5 review-bg">
             <h2 className="text-center" style={{ color: 'orange' }}>What Our Customer Says </h2>
             <div className="row row-cols-1 row-cols-md-3">
                 {
