@@ -10,7 +10,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import ExploreGallery from './Pages/Home/ExploreGallery/ExploreGallery';
 // import AddProduct from './Pages/AddProduct/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
-// import Review from './Pages/Home/Review/Review/Review';
+import Review from './Pages/Home/Review/Review/Review';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 // import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
 // import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
@@ -61,9 +61,9 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            {/* <Route path="/review">
+            <Route path="/review">
               <Review></Review>
-            </Route> */}
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>

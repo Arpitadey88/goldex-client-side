@@ -1,10 +1,7 @@
-.cart{
+/* .cart{
     box-shadow: 10px 10px 20px gray;
+} */
+.watch-img:hover{
+    transform: scale(1.05);
+    transition: all 1s ease-in-out;
 }
-.cart img{
-    transform: scale(1);
-    transition: 0.5s ease-out;
-} 
-.cart:hover img {
-   transform: translateY(-0.5px);
-  }

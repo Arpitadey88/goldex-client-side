@@ -9,7 +9,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar className="container-fluid p-1" sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className="container-fluid p-1" fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar className="py-1" ><img alt="" src={logo} width="90" height="50"
                 /><span style={{
                     color: 'orange'
@@ -29,7 +29,7 @@ const Header = () => {
                         color: 'orange'
                     }}>Explore Gallary</h5></Nav.Link>
 
-                    <Nav.Link as={HashLink} to="#review"><h5 style={{
+                    <Nav.Link as={HashLink} to="/review"><h5 style={{
                         color: 'orange'
                     }}>Reviews</h5></Nav.Link>
 

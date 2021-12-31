@@ -6,7 +6,7 @@ import './SingleReview.css';
 const SingleReview = (props) => {
     const { star, name, description, img } = props.review;
     return (
-        <div className="px-5">
+        <div className="d-flex align-item-center justify-content-center">
             <div className="p-3 review-cart" style={{ width: '340px', height: '290px', backgroundColor: 'ghostWhite' }}>
                 <div >
                     <span><img style={{ height: '30px' }} src={comma} alt="" /></span>

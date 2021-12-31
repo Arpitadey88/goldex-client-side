@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardGroup } from 'react-bootstrap';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Product from '../Product/Product';
-import AddReview from '../Review/AddReview/AddReview';
+// import AddReview from '../Review/AddReview/AddReview';
 import Review from '../Review/Review/Review';
 // import Products from '../Products/Products';
 
@@ -20,17 +21,17 @@ const Home = () => {
             <Banner></Banner>
             <About></About>
 
-            <div id="products" className="my-3">
-                <h2 className="text-center"> <b>Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist </b></h2>
-                <div className="row row-cols-1 row-cols-md-3">
+            <CardGroup id="products">
+                <h2 className='ms-5'> <b>Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist </b></h2>
+                <Card.Body className="row row-cols-1 row-cols-md-3 d-flex align-item-center justify-content-center">
                     {
                         products.map(product => <Product
                             key={product._id}
                             product={product}>
                         </Product>)
                     }
-                </div>
-            </div>
+                </Card.Body>
+            </CardGroup>
 
             <Review></Review>
             {/* <AddReview></AddReview> */}

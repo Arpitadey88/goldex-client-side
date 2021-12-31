@@ -9,7 +9,7 @@ import Products from '../Products/Products';
 const ExploreGallery = () => {
     return (
         <div>
-            <h1 className="text-center my-3"><b>Exclusive <span className="text-warning">Collection</span> Of Watches</b></h1>
+            <h1 className="text-center mt-5 py-4"><b>Exclusive <span className="text-warning">Collection</span> Of Watches</b></h1>
             <CardGroup>
                 <Card>
                     <Card.Img style={{ height: '380px' }} variant="top" src={image1} />

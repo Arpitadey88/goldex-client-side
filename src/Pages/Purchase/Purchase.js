@@ -54,34 +54,33 @@ const Purchase = () => {
 
 
     return (
-        <div id="purchase" className="border px-3">
-            <h2>PURCHASE : {productId}{product.name}</h2>
-            <h2 className="text-center" style={{ color: 'crimson' }} >Details Information</h2>
+        <div id="purchase" className="border rounded-2 px-3">
+            <h1 className="text-center fw-bold py-4" style={{ color: 'crimson' }} >Details Information</h1>
             <div className="card mb-3">
                 <div className="row g-0">
-                    <div className="col-md-6 border px-5" style={{ backgroundColor: 'whiteSmoke' }} >
+                    <div className="col-md-6 border px-5 text-center py-5" style={{ backgroundColor: 'black' }} >
                         <div className="m-3">
-                            <img src={product.img} style={{ height: '350px', backgroundColor: 'whiteSmoke' }} className="img-fluid rounded-start ms-5" alt="..." />
+                            <img src={product.img} style={{ height: '350px' }} className="img-fluid rounded-start ms-5" alt="..." />
                         </div>
                         <div className="card-body">
                             <h2 style={{ color: 'brown' }} className="card-title">{product.name}</h2>
-                            <h5 style={{ color: 'brown' }} className="card-text"><small className="text-muted">{product.description}</small></h5>
-                            <h5 style={{ color: 'brown' }} className="card-text"><small className="text-muted">{product.price}</small></h5>
+                            <h4 className="card-text"><small className="text-muted">{product.description}</small></h4>
+                            <h4 className="card-text"><small className="text-muted">{product.price}</small></h4>
                         </div>
                     </div>
-                    <div className="col-md-6 submit-order border">
+                    <div className="col-md-6 submit-order border rounded-2">
                         <h2 className="text-center" style={{ color: 'chocolate' }}>Confirm Your Order</h2>
-                        <form className="border mx-3 py-5" onSubmit={handleAddProduct}>
+                        <form className="border rounded-3 mx-3 py-5" onSubmit={handleAddProduct}>
 
-                            <input type="text" ref={productRef} defaultValue={product.name} />
+                            <input className='py-2 ps-2 rounded-3 fw-bold' type="text" ref={productRef} defaultValue={product.name} />
                             <br />
-                            <input type="text" ref={nameRef} defaultValue={user.displayName} />
+                            <input className='py-2 ps-2 rounded-3 fw-bold' type="text" ref={nameRef} defaultValue={user.displayName} />
                             <br />
-                            <input type="email" ref={emailRef} name="" id="" defaultValue={user.email} />
+                            <input className='py-2 ps-2 rounded-3 fw-bold' type="email" ref={emailRef} name="" id="" defaultValue={user.email} />
                             <br />
-                            <input type="number" ref={numberRef} placeholder="Enter Phone Number" />
+                            <input className='py-2 ps-2 rounded-3 fw-bold' type="number" ref={numberRef} placeholder="Enter Phone Number" />
                             <br />
-                            <input type="submit" value="Order Now" />
+                            <input style={{ backgroundColor: 'chocolate' }} className='py-2 ps-2 fs-5 border-0 rounded-3 fw-bold text-white' type="submit" value="Order Now" />
                         </form>
                     </div>
                 </div>

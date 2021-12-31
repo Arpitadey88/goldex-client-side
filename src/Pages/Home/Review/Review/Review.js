@@ -13,8 +13,8 @@ const Review = () => {
 
 
     return (
-        <div style={{ backgroundColor: 'whiteSmoke' }} className="p-5 review-bg">
-            <h2 className="text-center" style={{ color: 'orange' }}>What Our Customer Says </h2>
+        <div style={{ backgroundColor: 'whiteSmoke' }} className="review-bg my-5 pt-3 pb-5">
+            <h2 className="text-center pb-4" style={{ color: 'orange' }}>What Our Customer Says </h2>
             <div className="row row-cols-1 row-cols-md-3">
                 {
                     reviews.map(review => <SingleReview
