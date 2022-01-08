@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import image from '../../../watch-img/COVER6.jpg';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const history = useHistory();
+    const navigate = useNavigate();
     const { user, registerUser, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
@@ -24,7 +24,7 @@ const Register = () => {
             alert("password didn't match")
             return
         }
-        registerUser(loginData.email, loginData.password, loginData.name, history)
+        registerUser(loginData.email, loginData.password, loginData.name, navigate)
         e.preventDefault();
     }
     return (

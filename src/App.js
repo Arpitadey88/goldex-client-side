@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -12,6 +12,15 @@ import ExploreGallery from './Pages/Home/ExploreGallery/ExploreGallery';
 import Purchase from './Pages/Purchase/Purchase';
 import Review from './Pages/Home/Review/Review/Review';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import { Fragment } from 'react';
+import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
+import AddProduct from './Pages/AddProduct/AddProduct';
+import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import Payment from './Pages/Dashboard/Payment/Payment';
+import Reviews from './Pages/Dashboard/Reviews/Reviews';
 // import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
 // import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 // import Admin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
@@ -23,52 +32,51 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header></Header>
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-            {/* <Route path="/addProduct">
-              <AddProduct />
-            </Route>
-            <Route path="/manageOrder">
-              <ManageOrder />
-            </Route>
-            <Route path="/myOrder">
-              <MyOrder></MyOrder>
-            </Route>
-            <Route path="/admin">
-              <Admin />
-            </Route>
-            <Route path="/addReviews">
-              <Reviews />
-            </Route>
-            <Route path="/payment">
-              <Payment />
-            </Route> */}
-            <PrivateRoute path="/purchase/:productId">
-              <Purchase />
-            </PrivateRoute>
-            <PrivateRoute path="/explore">
-              <ExploreGallery></ExploreGallery>
-            </PrivateRoute>
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-            <Route path="/review">
-              <Review></Review>
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </Switch>
-          <Footer></Footer>
+          <Fragment>
+            <Header />
+            <Routes>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="/login" element={<Login />}> </Route>
+              <Route path="/register" element={<Register />}></Route>
+
+              <Route path="/purchase/:productId" element={<PrivateRoute><Purchase /></PrivateRoute>}></Route>
+
+              <Route path="/explore" element={<PrivateRoute><ExploreGallery /></PrivateRoute>}> </Route>
+
+              <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+
+                <Route exact path="/dashboard" element={<DashboardHome />}>
+                </Route>
+
+                <Route path={`/dashboard/addProduct`} element={<AddProduct />}>
+                </Route>
+
+                <Route path={`/dashboard/manageOrder`} element={<ManageOrder />}>
+                </Route>
+
+                <Route path={`/dashboard/manageProducts`} element={<ManageProducts />}>
+                </Route>
+
+                <Route path={`/dashboard/myOrder`} element={<MyOrder />}>
+                </Route>
+
+                <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />}>
+                </Route>
+
+                <Route path={`/dashboard/payment`} element={<Payment />}>
+                </Route>
+
+                <Route path={`/dashboard/addReviews`} element={<Reviews />}>
+                </Route>
+              </Route>
+
+              <Route path="/review" element={<Review />}></Route>
+
+              <Route exact path="/" element={<Home />}></Route>
+
+            </Routes>
+            <Footer />
+          </Fragment>
         </Router>
       </AuthProvider>
 

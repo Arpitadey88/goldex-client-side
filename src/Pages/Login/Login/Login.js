@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import image from '../../../watch-img/COVER1.jpg';
 
@@ -10,7 +10,7 @@ const Login = () => {
 
     const { signInUsingGoogle } = useAuth();
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
     const redirect_uri = location.state?.from || './home'
 
     const handleOnChange = e => {
@@ -23,15 +23,12 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password, location, history);
+        loginUser(loginData.email, loginData.password, location, navigate);
         e.preventDefault();
     }
 
     const handleGoogleLogin = () => {
-        signInUsingGoogle()
-            .then((result) => {
-                history.push(redirect_uri);
-            })
+        signInUsingGoogle(location, navigate);
     }
 
     return (

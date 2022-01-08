@@ -4,7 +4,7 @@ import image from '../../../watch-img/Bg2.jpg';
 
 const Banner = () => {
     return (
-        <Card className="rounded-2 mt-2 w3-animate-left">
+        <Card className="rounded-2 mt-5 pt-3 w3-animate-left">
             <Card.Img style={{ height: '590px' }} className="banner-img" src={image} alt="Card image" />
             <Card.ImgOverlay>
                 <div className="container-fluid mb-5">

@@ -9,7 +9,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar className="container-fluid p-1" fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar style={{ backgroundColor: '#251b1a' }} className="container-fluid p-1" fixed="top" collapseOnSelect expand="lg" variant="dark">
                 <Navbar className="py-1" ><img alt="" src={logo} width="90" height="50"
                 /><span style={{
                     color: 'orange'
@@ -55,7 +55,7 @@ const Header = () => {
                             </div>
                             :
                             <NavLink style={{ color: 'white', borderRadius: '3px' }} to="/login">
-                                <Button className="pe-4 py-1" style={{ backgroundColor: 'orange' }}><h5><b>Login</b></h5></Button>
+                                <Button className="px-3 py-1 me-4" style={{ backgroundColor: 'orange' }}><h5><b>Login</b></h5></Button>
                             </NavLink>
                     }
 
