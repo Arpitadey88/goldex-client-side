@@ -18,8 +18,8 @@ const Reviews = () => {
             })
     }
     return (
-        <div id="#review" className="add-review border m-4" >
-            <h3 className="text-center mt-2" style={{ color: 'saddleBrown' }}>Please Give Your Feedback</h3>
+        <div id="#review" className="add-review m-5" >
+            <h3 className="text-center mt-2" style={{ color: '#111b36' }}>Please Give Your Feedback</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("img")} placeholder="image url" />
                 <input {...register("name", { required: true })} placeholder="Your Name" />

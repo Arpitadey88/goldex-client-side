@@ -37,7 +37,7 @@ const MakeAdmin = () => {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
-                <Button className="mx-5 mt-4" variant="primary" type="submit">
+                <Button style={{ backgroundColor: '#1E3163' }} className="mx-5 mt-4 border-0" type="submit">
                     Make Admin
                 </Button>
             </form>

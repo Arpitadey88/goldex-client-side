@@ -60,13 +60,13 @@ const ManageOrder = () => {
 
 
     return (
-        <div className="container">
+        <div className="container p-0">
             <h1>All orders {orders.length}</h1>
 
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Product Title</th>
+                        <th >Product Title</th>
                         <th>User Name</th>
                         <th>Email</th>
                         <th>Phone</th>
@@ -82,7 +82,7 @@ const ManageOrder = () => {
                             <td>{order.userEmail}</td>
                             <td>{order.userNumber}</td>
                             <td>Pending</td>
-                            <td>
+                            {/* <td>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <select
                                         onClick={() => handleOrderId(order?._id)}
@@ -94,10 +94,12 @@ const ManageOrder = () => {
                                     </select>
                                     <input type="submit" />
                                 </form>
-                            </td>
-                            <Button style={{ color: 'white', backgroundColor: 'darkGreen' }} className="px-3 py-2 m-1">Update</Button>
+                            </td> */}
+                            <td>
+                                <Button style={{ color: 'white', backgroundColor: 'darkGreen' }} className="px-3 py-2 m-1 border-0">Update</Button>
 
-                            <Button onClick={() => handleDeleteOrder(order._id)} style={{ color: 'white', backgroundColor: 'brown' }} className="px-3 py-2 m-1">Delete</Button>
+                                <Button onClick={() => handleDeleteOrder(order._id)} style={{ color: 'white', backgroundColor: 'brown' }} className="px-3 py-2 m-1 border-0">Delete</Button>
+                            </td>
                         </tr>
                     </tbody>
                 ))}

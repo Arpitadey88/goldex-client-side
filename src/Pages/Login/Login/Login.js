@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import image from '../../../watch-img/COVER1.jpg';
+import image from '../../../watch-img/bg.jpg';
+import google from '../../../watch-img/google.png';
+
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
@@ -32,16 +34,16 @@ const Login = () => {
     }
 
     return (
-        <div className="m-5 border p-3">
-            <h2 className="text-center py-2" style={{ color: 'chocolate' }}> <b>Please Log In To Explore More</b></h2>
+        <div className="pt-4 mt-5 container">
+            <h2 className="text-center py-2" style={{ color: '#1E3163' }}> <b>Please Log In To Explore More</b></h2>
             <div className="row g-0">
 
-                <div className="col-md-6 border container-fluid">
-                    <img className="img-fluid" src={image} alt="" />
+                <div className="col-md-6">
+                    <img style={{ height:'460px', width:'700px' }}  className="img-fluid " src={image} alt="" />
                 </div>
 
-                <div className="col-md-6 border p-5 justify-content-center align-items-center">
-                    <h2 className="text-center pb-4" style={{ color: 'brown' }}> <b>Login Form</b></h2>
+                <div className="col-md-6 p-5 justify-content-center align-items-center">
+                    <h2 className="text-center pb-4" style={{ color: '#1E3163' }}> <b>Login Form</b></h2>
 
                     <form onSubmit={handleLoginSubmit}>
                         <div className="row mb-3">
@@ -59,7 +61,7 @@ const Login = () => {
                         </div>
 
                         <div className="text-center py-3">
-                            <Button className="px-5" variant="primary" size="lg" active type="submit">Login</Button>
+                            <Button className="px-5 py-2 border-0" variant="danger" size="lg" active type="submit">Login</Button>
                         </div>
                     </form>
                     {isLoading && <div className=" text-center"><Spinner animation="border" variant="info" /></div>}
@@ -73,7 +75,10 @@ const Login = () => {
                     <div className="text-center fw-bold">-------------------OR--------------------</div>
 
                     <div className="text-center my-4">
-                        <Button onClick={handleGoogleLogin} className="mt-1" variant="danger" size="lg" active>Google Sign In</Button>
+                        <div>
+                        <img className='border border-1 border-primary rounded-start'  style={{ height:'45px' }} src={google} alt="" />
+                        <Button onClick={handleGoogleLogin} className=" px-5 rounded-0 rounded-end" variant="primary" size="lg" active>Google Sign In</Button>
+                        </div>
 
                         <p className="my-2">new user? Please <Link to="/register">Register</Link></p>
                     </div>

@@ -21,16 +21,17 @@ const AddProduct = () => {
     }
     return (
         <div className="add-product">
-            <h1 className="text-center mb-2" style={{ color: 'chocolate' }}>Add New Product</h1>
+            <h1 className="text-center my-2" style={{ color: '#1E3163' }}>Add New Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("img")} placeholder="image url" />
+                <input {...register("img")} placeholder="Enter Image Url" />
                 <input {...register("name", { required: true })} placeholder="Title" />
                 <textarea {...register("description")} placeholder="Description" />
                 <input {...register("price")} placeholder="Price" />
                 <input type="submit" />
             </form>
             <div className="text-center">
-                <Link to="/dashboard"><Button className="mx-5 px-5 py-2 mt-5">Go Dashboard</Button></Link>
+                <Link to="/dashboard"><Button 
+                 style={{ backgroundColor: '#1E3163' }} className="mx-5 px-5 py-2 border-0">Go Dashboard</Button></Link>
             </div>
         </div>
     );

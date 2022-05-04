@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
+import Blog from '../Blog/Blog';
+import Blogs from '../Blogs/Blogs';
 import Product from '../Product/Product';
 // import AddReview from '../Review/AddReview/AddReview';
 import Review from '../Review/Review/Review';
@@ -21,20 +23,20 @@ const Home = () => {
             <Banner></Banner>
             <About></About>
 
-            <CardGroup id="products">
-                <h2 className='ms-5'> <b>Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist </b></h2>
-                <Card.Body className="row row-cols-1 row-cols-md-3 d-flex align-item-center justify-content-center">
-                    {
-                        products.map(product => <Product
-                            key={product._id}
-                            product={product}>
-                        </Product>)
-                    }
-                </Card.Body>
-            </CardGroup>
-
+            <div className="container my-5" id="products">
+            <h1 className='text-center' style={{ color: '#1E3163' }}> Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist</h1>
+            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 mx-1 py-4">
+                {
+                    products.map(product => <Product
+                        key={product._id}
+                        product={product}>
+                    </Product>)
+                }
+            </div>
+        </div>
+            <Blog></Blog>
+            <Blogs></Blogs>
             <Review></Review>
-            {/* <AddReview></AddReview> */}
 
         </div>
     );

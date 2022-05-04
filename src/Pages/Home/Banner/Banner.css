@@ -1,0 +1,26 @@
+.banner-bg{
+    background-color: #1E3163;
+    width: 100%;
+}
+.hero-img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.hero-btn{
+    background-color: #FFC107;
+    color: #1E3163;
+    border: none;
+}
+.hero-btn:hover{
+    background-color: #1E3163;
+    color: white;
+}
+
+@media only screen and (max-width: 425px) {
+    .hero-img{
+        width: 100%;
+        height: 230px;
+        /* object-fit: none; */
+    }
+}

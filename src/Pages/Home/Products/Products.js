@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup } from 'react-bootstrap';
 import Product from '../Product/Product';
 
 
@@ -14,17 +13,17 @@ const Products = () => {
     }, [])
 
     return (
-        <CardGroup id="products">
-            <h2 className='ms-5'> <b>Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist </b></h2>
-            <Card.Body className="row row-cols-1 row-cols-md-3 d-flex align-item-center justify-content-center">
+        <div className="container mt-0" id="products">
+            <h1 className='text-center' style={{ color: '#1E3163' }}> Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist</h1>
+            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 mx-1 py-md-5 py-2">
                 {
                     products.map(product => <Product
                         key={product._id}
                         product={product}>
                     </Product>)
                 }
-            </Card.Body>
-        </CardGroup>
+            </div>
+        </div>
     );
 };
 export default Products;

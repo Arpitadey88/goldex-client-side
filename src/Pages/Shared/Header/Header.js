@@ -1,66 +1,101 @@
-import React from 'react';
-import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button, Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
-import logo from '../../../watch-img/logo.png';
+import logo from '../../../watch-img/logo-main.png';
+import './Header.css';
 
 const Header = () => {
     const { user, logOut } = useAuth();
+
+// change nav colour when scrolling
+    const [color, setColor] = useState(false)
+    const changeColor = () => {
+        if(window.scrollY >= 65) {
+            setColor(true)
+        } else {
+            setColor(false)
+        }
+    }
+    window.addEventListener('scroll', changeColor);
+
+    // navbar-scroll
+    // let navArea = document.querySelector('.nav-area');
+
+    // window.onscroll = () => {
+    //     if (window.scrollY >= 400) {
+    //         navArea.classList.add("navbar-scroll")
+    //     }
+    //     else {
+    //         navArea.classList.remove("navbar-scroll")
+    //     }
+    // }
     return (
-        <div>
-            <Navbar style={{ backgroundColor: '#251b1a' }} className="container-fluid p-1" fixed="top" collapseOnSelect expand="lg" variant="dark">
-                <Navbar className="py-1" ><img alt="" src={logo} width="90" height="50"
-                /><span style={{
-                    color: 'orange'
-                }}><b><h5 className="me-2">Goldex WatchShop</h5></b></span></Navbar>
-                <Navbar.Toggle />
+        <div className={color? 'nav-area nav-scroll' : 'nav-area'}>
+            <nav  id="navbar_top">
+                <div className="navbar navbar-expand-lg menu-style">
+                    <div className="container">
+                        <a className="navbar-brand logo-style fs-3" href="#home"><img className='logo-img' width="40" height="25" src={logo} alt="" /><span>
+                            Goldex Watch</span> </a>
 
-                <Navbar.Collapse className="justify-content-end" >
-                    <Nav.Link as={HashLink} to="/home"><h5 style={{
-                        color: 'orange'
-                    }}>Banner</h5></Nav.Link>
+                        <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="toggler-icon top-bar"></span>
+                            <span className="toggler-icon middle-bar"></span>
+                            <span className="toggler-icon bottom-bar"></span>
+                        </button>
+                        <div className="collapse navbar-collapse position-relative" id="navbarSupportedContent">
+                            <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
+                                <li className="active ms-3">
+                                    <Nav.Link as={HashLink} className="nav-link" to="/home#banner">Banner</Nav.Link>
+                                </li>
 
-                    <Nav.Link as={HashLink} to="/home#products"><h5 style={{
-                        color: 'orange'
-                    }}>Products</h5></Nav.Link>
+                                <li className="ms-3">
+                                    <Nav.Link as={HashLink} className="nav-link" to="/home#products">Products</Nav.Link>
+                                </li>
 
-                    <Nav.Link as={HashLink} to="/explore"><h5 style={{
-                        color: 'orange'
-                    }}>Explore Gallary</h5></Nav.Link>
+                                <li className="ms-3">
+                                    <Nav.Link as={HashLink} className="nav-link" to="/explore">Gallary</Nav.Link>
+                                </li>
 
-                    <Nav.Link as={HashLink} to="/review"><h5 style={{
-                        color: 'orange'
-                    }}>Reviews</h5></Nav.Link>
+                                <li className="ms-3">
+                                    <Nav.Link as={HashLink} className="nav-link" to="/review#review">Reviews</Nav.Link>
+                                </li>
 
+                                <li className="ms-3">
+                                    <Nav.Link as={HashLink} to="#login">{user?.displayName}</Nav.Link>
+                                </li>
+                                {
+                                    user?.email ?
+                                        <div>
+                                            <div className="row">
+                                                <div className="col-md-6 py-1">
+                                                    <Nav.Link as={HashLink} to="/dashboard" ><h5 className='ms-3' style={{
+                                                        color: 'white'
+                                                    }}>Dashboard</h5></Nav.Link>
+                                                </div>
 
-                    <Nav.Link as={HashLink} to="#login"><h5 style={{
-                        color: 'orange'
-                    }}>{user?.displayName}</h5></Nav.Link>
+                                                <div className="col-md-6"><Nav.Link>
+                                                    <Button onClick={logOut} className="  border-0 ms-3 logOut-btn pb-0"><h5 >Logout</h5></Button>
+                                                </Nav.Link></div>
+                                            </div>
+                                        </div>
+                                        :
+                                        <li className='mt-2 ms-3 ms-md-0'>
+                                            <NavLink style={{ color: 'white', textDecoration: 'none' }} to="/login">Login
 
-                    {
-                        user?.email ?
-                            <div>
-                                <div className="row">
-                                    <div className="col-md-6 py-1">
-                                        <Nav.Link as={HashLink} to="/dashboard"><h5 style={{
-                                            color: 'orange'
-                                        }}>Dashboard</h5></Nav.Link>
-                                    </div>
+                                            </NavLink>
+                                        </li>
+                                }
 
-                                    <div className="col-md-6"><Nav.Link>
-                                        <Button onClick={logOut} className="pe-4 py-1" style={{ backgroundColor: 'orange', color: 'white', borderRadius: '3px' }}><h5><b>Logout</b></h5></Button>
-                                    </Nav.Link></div>
-                                </div>
-                            </div>
-                            :
-                            <NavLink style={{ color: 'white', borderRadius: '3px' }} to="/login">
-                                <Button className="px-3 py-1 me-4" style={{ backgroundColor: 'orange' }}><h5><b>Login</b></h5></Button>
-                            </NavLink>
-                    }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-                </Navbar.Collapse>
-            </Navbar>
         </div>
     );
 };

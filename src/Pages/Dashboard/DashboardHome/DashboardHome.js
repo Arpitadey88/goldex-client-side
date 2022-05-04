@@ -51,10 +51,10 @@ const DashboardHome = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center px-5 py-3'>
+            <div className='text-center px-md-5 py-md-3'>
                 <Bar data={data}
                 />
-                <h3 className='text-primary'>User Analytics</h3>
+                <h3 style={{ color: '#1E3163'}}>User Analytics</h3>
             </div>
         </div>
     );

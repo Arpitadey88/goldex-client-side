@@ -14,8 +14,8 @@ const ManageProducts = () => {
     return (
         <div>
             <div id="products" className="my-3">
-                <h2 className="text-center" style={{ color: 'orange' }}>Manage All Products </h2>
-                <div className="row row-cols-1 row-cols-md-3">
+                <h2 className="text-center" style={{ color: '#1E3163' }}>Manage All Products </h2>
+                <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 mx-1 py-4">
                     {
                         products.map(product => <ManageSingleProduct
                             key={product._id}

@@ -1,0 +1,189 @@
+.rotate {
+  position: absolute;
+  transform: rotate(270deg);
+  padding-top: 19%;
+  margin-left: -8%;
+  font-size: 2.4rem;
+}
+
+.text-size {
+  font-size: 3.9rem;
+
+}
+
+/* new css for banner */
+.home {
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-start;
+  background: url('../../../watch-img/banner.jpg') no-repeat;
+  background-position: 0px 0px;
+  background-size: cover;
+  position: relative;
+  animation: animatedBackground 20s linear infinite alternate;
+
+}
+
+.home_blog {
+  min-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  background: url('./../../../watch-img/Watche-banner.jpg') no-repeat;
+  background-position: 0px 0px;
+  background-size: cover;
+  position: relative;
+  animation: animatedBackground 60s linear infinite alternate;
+
+}
+
+.content {
+  width: 50rem;
+}
+
+.content h1 {
+  font-size: 5.5rem;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.content h2 {
+  font-size: 4.5rem;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.content h3 {
+  font-size: 4rem;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.content h3 span {
+  color: #e62222;
+}
+
+.content .btn {
+  color: #fff;
+  border-color: orange;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: .6rem 1.6rem;
+}
+
+.content .btn:hover {
+  color: white !important;
+  background: #1E3163;
+}
+
+.barBoxDesign {
+  background-color: #1a1a1fd5 !important;
+}
+
+.Btext-color {
+  color: white !important;
+}
+
+.btn-design {
+  color: white !important;
+  background-color: rgb(220, 24, 24);
+}
+
+.barDesign {
+  color: rgb(220, 24, 24) !important;
+  margin-top: -15px;
+  padding-right: 5px;
+
+}
+
+
+.icon-background {
+  color: #130f40;
+  transition: transform 0.5s;
+}
+
+.icon-background:hover {
+  transform: rotate(180deg);
+  color: #e67e22;
+}
+
+.read-more:hover>.icon-background {
+  transform: rotate(180deg);
+  color: #e67e22;
+}
+
+.image-size {
+  width: 90% !important;
+}
+
+/* animation background */
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+
+  }
+
+  to {
+    background-position: 0% 100%;
+
+  }
+}
+
+@media (max-width: 991px) {
+
+  .home {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-position: right;
+  }
+
+  .content {
+    text-align: center;
+    padding-bottom: 5rem;
+  }
+
+  .content h3 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 320px) {
+
+  .home {
+    background: url('../../../watch-img/banner-small.jpg') no-repeat;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* background-position: 0 1.5rem; */
+    animation: none;
+  
+  }
+  .content h1 {
+    font-size: 4rem;
+    color: #fff;
+    padding: 1.5rem;
+  }
+  
+  .content h2 {
+    font-size: 3rem;
+    color: #fff;
+    padding-bottom: 1rem;
+  }
+  .content h3 {
+      font-size: 3rem;
+  }
+  }
+  

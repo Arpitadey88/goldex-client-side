@@ -3,65 +3,55 @@ import React from 'react';
 const Footer = () => {
     return (
 
-        <div className="container-fluid pt-2 pb-0 bg-dark text-white">
+        <div  style={{ backgroundColor: '#111b36'}}   className="text-white border">
+        <div className="container pt-2 pb-0">
             <hr />
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 pb-3">
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-4 pb-3">
                 <div className="col border-0">
-                    <h4 className="fw-bold text-warning pb-2">PRODUCTS</h4>
-                    <h6>Features</h6>
-                    <h6>Pricing</h6>
-                    <h6>Training</h6>
-                    <h6>Blog</h6>
+                    <h4 className="fw-bold text-warning pb-2">Company</h4>
+                    <h6>About</h6>
+                    <h6>General</h6>
                 </div>
                 <div className="col border-0">
-                    <h4 className="fw-bold text-warning pb-2">DOCS</h4>
-                    <h6>Getting Started</h6>
-                    <h6>Libraries</h6>
-                    <h6>Guides</h6>
-                    <h6>Simple Apps</h6>
-                </div>
-                <div className="col border-0">
-                    <h4 className="fw-bold text-warning pb-2">HELP</h4>
+                    <h4 className="fw-bold text-warning pb-2">Explore</h4>
                     <h6>FAQ</h6>
+                    <h6>Spin To Win</h6>
+                    <h6>Leader Board</h6>
+                </div>
+                <div className="col border-0">
+                    <h4 className="fw-bold text-warning pb-2">Help</h4>
+                    <h6>Support Center</h6>
                     <h6>Payment Sequrity</h6>
                     <h6>Privacy Policy</h6>
-                    <h6>EMI</h6>
                 </div>
                 <div className="col border-0">
-                    <h5 className="text-warning fw-bold">Terms and Conditions</h5>
+                    <h4 className="text-warning fw-bold">Terms and Conditions</h4>
                     <form className="row g-3 pt-1">
                         <div className="col-auto">
-                            <input type="email" className="form-control text-secondary fw-bold border-0"
+                            <input type="email" className="form-control text-secondary fw-bold border-0 w-75"
                                 id="inputPassword2" placeholder="Enter Email" aria-label="Search" />
                         </div>
                     </form>
-                    <br />
-                    <h6>In The press</h6>
-                    <h6>Press Releases</h6>
                 </div>
             </div>
             <hr />
-            <div className="row">
-                <div className="col-md-6">
-                    <span><i className="fab fa-facebook fs-2" style={{
-                        color: 'dodgerBlue'
-                    }}></i></span>
-                    <span><i className="fab fa-twitter fs-2 ps-3" style={{
-                        color: 'dodgerBlue'
-                    }}></i></span>
-                    <span><i className="fab fa-youtube fs-2 ps-3" style={{
-                        color: 'dodgerBlue'
-                    }}></i></span>
-                    <span><i className="fab fa-instagram fs-2 ps-3" style={{
-                        color: 'dodgerBlue'
-                    }}></i></span>
-                </div>
-                <div className="col-md-6">
-                    <h6>Terms of Use   |   Privacy   | Copyright © All Rights Reserved by <span
-                        className="text-primary fw-bold">Goldex WatchShop 2021</span></h6>
-                </div>
+            <div className="text-center">
+                <h6>Contact Us   |   About Us   | Corporate Customer   |   Resources   |  Account Terms And Conditions   |   Privacy Statement</h6>
+            </div>
+            <div className="text-center">
+                <h6 className="text-warning">FOLLOW US</h6>
+                <span><i className="fab fa-facebook fs-6 text-white"></i></span>
+                <span><i className="fab fa-twitter fs-6 text-white ps-2"></i></span>
+                <span><i className="fab fa-youtube fs-6 text-white ps-2"></i></span>
+                <span><i className="fab fa-instagram fs-6 text-white ps-2"></i></span>
+            </div>
+
+            <div className="copyright">
+                <p><small><span className="text-secondary fw-bold">Copyright © All Rights Reserved by</span> <span
+                    className="text-warning fw-bold">Goldex Watchshop</span></small></p>
             </div>
         </div>
+    </div>
     );
 };
 

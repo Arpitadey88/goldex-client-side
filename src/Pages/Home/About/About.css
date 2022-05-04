@@ -9,3 +9,6 @@
 .cart:hover {
     border: 1px solid lightBlue;
   } */
+  @media only screen and (max-width: 425px) {
+    
+}

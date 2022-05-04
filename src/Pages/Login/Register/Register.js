@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import image from '../../../watch-img/COVER6.jpg';
+import image from '../../../watch-img/COVER1.jpg';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -28,12 +28,12 @@ const Register = () => {
         e.preventDefault();
     }
     return (
-        <div className="mx-5 p-3">
-            <h2 className="text-center py-2" style={{ color: 'chocolate' }}> <b>Please Register And Stay Tuned</b></h2>
-            <div className="row g-0">
+        <div className="mt-5 container pt-5">
+            <h2 className="text-center pb-4" style={{ color: '#1E3163' }}> Please Register & Stay Tuned</h2>
+            <div className="row g-0  d-flex justify-content-around align-items-center">
 
-                <div style={{ height: '600px' }} className="col-md-6 border p-5 justify-content-center align-items-center">
-                    <h2 className="text-center pb-4" style={{ color: 'brown' }}> <b>Register Form</b></h2>
+                <div style={{ height: '500px' }} className="col-md-6 py-5 mb-5 pe-md-4 order-lg-0 order-1">
+                    <h2 className="text-center" style={{ color: '#1E3163' }}> Register Form</h2>
 
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
                         <div className="row mb-3">
@@ -62,8 +62,8 @@ const Register = () => {
                             </div>
                         </div>
 
-                        <div className="text-center py-2">
-                            <Button className="px-5" variant="primary" size="lg" active type="submit">Register</Button>
+                        <div className="text-center py-3">
+                            <Button style={{backgroundColor:'#111b36'}} className="px-5 border-0"  size="lg" active type="submit">Register</Button>
                         </div>
                     </form>}
                     {isLoading && <div className=" text-center"><Spinner animation="border" variant="info" /></div>}
@@ -74,18 +74,16 @@ const Register = () => {
 
                     {authError && <Alert variant="danger">{authError}</Alert>}
 
-                    <br />
-                    <div className="text-center fw-bold">-------------------OR--------------------</div>
 
-                    <div className="text-center my-4">
-                        <Button className="mt-1" variant="danger" size="lg" active>Google Sign In</Button>
+                    <div className="text-center my-2">
+                        {/* <Button className="mt-1" variant="danger" size="lg" active>Google Sign In</Button> */}
 
-                        <p className="my-2">already registerd? Please <Link to="/login">Login</Link></p>
+                        <p className="">already registerd? Please <Link to="/login">Login</Link></p>
                     </div>
                 </div>
 
-                <div className="col-md-6 border container-fluid">
-                    <img className="img-fluid" src={image} alt="" />
+                <div className="col-md-6 d-flex align-items-center justify-content-center">
+                    <img  style={{ height:'460px', width:'520px' }}  className="img-fluid" src={image} alt="" />
                 </div>
             </div>
         </div>

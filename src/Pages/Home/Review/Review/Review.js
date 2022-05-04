@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleReview from '../SingleReview/SingleReview';
+// import contact from '../../../../watch-img/contact.jpg';
 import './Review.css';
 
 const Review = () => {
@@ -13,9 +14,10 @@ const Review = () => {
 
 
     return (
-        <div style={{ backgroundColor: 'whiteSmoke' }} className="review-bg my-5 pt-3 pb-5">
-            <h2 className="text-center pb-4" style={{ color: 'orange' }}>What Our Customer Says </h2>
-            <div className="row row-cols-1 row-cols-md-3">
+        <div style={{ backgroundColor: 'whiteSmoke' }} className="review-bg my-5 py-5">
+            {/* <h2 className="text-center pb-4" style={{ color: 'orange' }}>What Our Customer Says </h2> */}
+            <h1 className='text-center' style={{ color: '#1E3163' }}> What Our <span style={{ color: 'orange' }} >Customer</span> Says</h1>
+            <div className="row row-cols-1 row-cols-md-4 g-3 d-flex justify-content-center py-4">
                 {
                     reviews.map(review => <SingleReview
                         key={review.id}
