@@ -7,7 +7,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div className="border py-2 container-fluid">
+        <div className="py-2 container-fluid">
             <div className="card-group mx-md-5">
                 <div style={{ height: '150px' }} className="card mb-3 border border-5 border-secondary">
                     <div className="row my-4 px-2">

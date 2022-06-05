@@ -17,8 +17,8 @@ const Banner = () => {
         document.title = "Goldex watchShop"
     }, []);
     return (
-        <div className="">
-        <section className="home border-0 pt-3 ps-4" id="home">
+        <div>
+        <section className="home border-0 pt-3 ps-4" id="banner">
 
             <div className="content p-md-5 m-md-5">
                 <h1 className="dancingFont">Goldex WatchShop</h1>
@@ -28,30 +28,8 @@ const Banner = () => {
             </div>
 
         </section>
-
-
     </div>
-        // <div className="banner-bg mt-5 py-5" id='banner'>
-        //     <div className=" container px-0">
-        //         <div className="row d-flex align-items-center justify-content-center mb-lg-2">
-        //             <div className="col-12 col-lg-6 order-lg-0 order-1">
-        //                 <div className="text-lg-start ani-text ps-3">
-        //                     <h1 className="text-white mt-md-5 mb-3 mt-3"><b>THE RETURN OF A GREAT CLASSIC</b></h1>
-        //                     <h1 className="text-warning mt-md-5 mt-2"><b>VINTAGE DESIGN</b></h1>
-        //                     <br />
-        //                     <h4 className="text-white mt-2 mb-lg-3"> <b>SHOP OUR COLLECTION OF DESIGNER WATCHES <br />
-        //                         <br /> FOR WOMEN AND MEN</b>
-        //                     </h4>
-        //                     <br />
-        //                     <Button className="py-2 px-5 hero-btn"><h4>Shop Now</h4></Button>
-        //                 </div>
-        //             </div>
-        //             <div className="col-12 col-lg-6 d-flex mt-md-4 justify-content-center" style={{ cursor: 'pointer' }}>
-        //                 <img className="image-hover ani-img hero-img" src={heroImg} alt="" />
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
+        
     );
 };
 

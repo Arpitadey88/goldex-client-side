@@ -11,19 +11,9 @@ const ExploreGallery = () => {
     
     return (
         <div>
-            <h1  style={{ color: '#1E3163' }} className="text-center mt-5 pt-5 pb-3"><b>Exclusive <span className="text-warning">Collection</span> Of Watches</b></h1>
+            <h1  style={{ color: '#1E3163' }} className="text-center mt-5 pt-4 pb-3"><b>Exclusive <span className="text-warning">Collection</span> Of Watches</b></h1>
             <Blog></Blog>
-            {/* <CardGroup>
-                <Card>
-                    <Card.Img style={{ height: '380px' }} variant="top" src={image1} />
-                </Card>
-                <Card>
-                    <Card.Img style={{ height: '380px' }} variant="top" src={image2} />
-                </Card>
-                <Card>
-                    <Card.Img style={{ height: '380px' }} variant="top" src={image3} />
-                </Card>
-            </CardGroup> */}
+           
             <div className="mt-5">
                 <Products></Products>
             </div>

@@ -1,56 +1,71 @@
 import React, { useEffect } from 'react';
-import { useRef, useState } from 'react';
+import axios from "axios";
+import { useState } from 'react';
+import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './Purchase.css';
+import { Link } from 'react-router-dom';
 
 
 const Purchase = () => {
     const { user } = useAuth();
     const { productId } = useParams();
     const [product, setProduct] = useState({});
-
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const numberRef = useRef();
-    const productRef = useRef();
-
-
-    const handleAddProduct = e => {
-        const userName = nameRef.current.value;
-        const userEmail = emailRef.current.value;
-        const userNumber = numberRef.current.value;
-        const userProduct = productRef.current.value;
-
-        const newOrder = { userName, userEmail, userNumber, userProduct };
-        // console.log(newOrder);
-
-        fetch(`https://powerful-caverns-46584.herokuapp.com/orders`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newOrder)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    alert('Order Confirmed Successfully')
-                    e.target.reset();
-                }
-            })
-
-        e.preventDefault();
-
-    };
+    const [error, setError] = useState("");
 
 
     useEffect(() => {
         fetch(`https://powerful-caverns-46584.herokuapp.com/products/${productId}`)
             .then(res => res.json())
-            .then(data => setProduct(data));
+            .then(data => setProduct(data))
+            .catch((err) => setError("Invalid Request to server"));
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    const { register, handleSubmit, reset } = useForm();
 
-    }, [])
+    const onSubmit = (data) => {
+        const order = data;
+        order.status = "Pending";
+        order.product = product;
+
+        // send data to server
+        axios
+            .post("https://powerful-caverns-46584.herokuapp.com/order", order)
+            .then((res) => {
+                if (res.data.insertedId) {
+                    alert("order added successfully\nWait for approve");
+                    reset();
+                }
+            })
+            .catch((err) => console.log(err.message));
+    };
+    if (!product._id) {
+        return (
+            <div>
+                {error ? (
+                    <>
+                        <div className="h4 text-center my-5 fw-bold text-orange">
+                            {error}
+                        </div>
+                        <Link to="/">
+                            <div className="text-center">
+                                &#8592; Back to home
+                            </div>
+                        </Link>
+                    </>
+                ) : (
+                    <div className="text-center my-5">
+                        <div
+                            className="spinner-border text-orange"
+                            role="status"
+                        ></div>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
 
 
     return (
@@ -68,17 +83,16 @@ const Purchase = () => {
                     </div>
                     <div className="col-md-6 submit-order">
                         <h2 className="text-center py-3" style={{ color: '#111b36' }}>Confirm Your Order</h2>
-                        <form className=" rounded-3 mx-3 my-0" onSubmit={handleAddProduct}>
-
-                            <input className='py-2 ps-2 rounded-3 fw-bold' type="text" ref={productRef} defaultValue={product.name} />
+                        <form onSubmit={handleSubmit(onSubmit)} className="rounded-3 mx-3 my-0">
+                            <input className='py-2 ps-2 rounded-3' type="text" value={product.name} />
                             <br />
-                            <input className='py-2 ps-2 rounded-3 fw-bold' type="text" ref={nameRef} defaultValue={user.displayName} />
+                            <input className='py-2 ps-2 rounded-3' value={user.displayName} {...register("name", { required: true })} />
                             <br />
-                            <input className='py-2 ps-2 rounded-3 fw-bold' type="email" ref={emailRef} name="" id="" defaultValue={user.email} />
+                            <input className='py-2 ps-2 rounded-3' value={user.email}  {...register("email", { required: true })} />
                             <br />
-                            <input className='py-2 ps-2 rounded-3 fw-bold' type="number" ref={numberRef} placeholder="Enter Phone Number" />
+                            <input className='py-2 ps-2 rounded-3' placeholder="Enter Phone Number" {...register("phone", { required: true })} />
                             <br />
-                            <input style={{ backgroundColor: '#111b36' }} className='py-2 ps-2 fs-5 border-0 rounded-3 fw-bold text-white' type="submit" value="Order Now" />
+                            <input style={{ backgroundColor: '#111b36' }} className='py-2 ps-2 fs-5 border-0 rounded-3 text-white' type="submit" value="Order Now" />
                         </form>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ const Home = () => {
             <Banner></Banner>
             <About></About>
 
-            <div className="container my-5" id="products">
+            <div className="container my-md-5 my-2" id="products">
             <h1 className='text-center' style={{ color: '#1E3163' }}> Latest <span style={{ color: 'orange' }} >Watches</span> You Can't Resist</h1>
             <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 mx-1 py-4">
                 {

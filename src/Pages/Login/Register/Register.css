@@ -1,0 +1,10 @@
+.cover-img{
+    height: 420px;
+    width: 520px;
+    border-radius: .6rem;
+}
+@media  only screen and (max-width: 425px) {
+    .cover-img{
+        height: 200px;
+    }
+}

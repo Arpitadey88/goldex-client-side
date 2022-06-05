@@ -8,25 +8,20 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import ExploreGallery from './Pages/Home/ExploreGallery/ExploreGallery';
-// import AddProduct from './Pages/AddProduct/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
 import Review from './Pages/Home/Review/Review/Review';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import { Fragment } from 'react';
 import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import AddProduct from './Pages/AddProduct/AddProduct';
-import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
-import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import Reviews from './Pages/Dashboard/Reviews/Reviews';
-// import ManageOrder from './Pages/Dashboard/ManageOrder/ManageOrder';
+import NotFound from './Pages/Home/NotFound/NotFound';
+import ManageOrders from './Pages/Dashboard/ManageOrders/ManageOrders';
+import MyOrders from './Pages/Dashboard/MyOrder/MyOrders';
 // import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
-// import Admin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
-// import Reviews from './Pages/Dashboard/Reviews/Reviews';
-// import Payment from './Pages/Dashboard/Payment/Payment';
-
 function App() {
 
   return (
@@ -52,13 +47,13 @@ function App() {
                 <Route path={`/dashboard/addProduct`} element={<AddProduct />}>
                 </Route>
 
-                <Route path={`/dashboard/manageOrder`} element={<ManageOrder />}>
+                <Route path={`/dashboard/manageOrder`} element={<ManageOrders />}>
                 </Route>
 
                 <Route path={`/dashboard/manageProducts`} element={<ManageProducts />}>
                 </Route>
 
-                <Route path={`/dashboard/myOrder`} element={<MyOrder />}>
+                <Route path={`/dashboard/myOrder`} element={<MyOrders />}>
                 </Route>
 
                 <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />}>
@@ -74,6 +69,7 @@ function App() {
               <Route path="/review" element={<Review />}></Route>
 
               <Route exact path="/" element={<Home />}></Route>
+              <Route exact path='*' element={<NotFound />}></Route>
 
             </Routes>
             <Footer />
