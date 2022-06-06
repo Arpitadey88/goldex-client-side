@@ -25,19 +25,19 @@ const ManageOrder = ({
     };
     return (
         <tr>
-            <td>{name}</td>
-            <td>{product?.name}</td>
-            <td>{email}</td>
-            <td>{status}</td>
-            <td>
-                <select defaultValue={status} onChange={handleChange}>
+            <td className="py-2">{name}</td>
+            <td className="py-2">{product?.name}</td>
+            <td className="py-2">{email}</td>
+            <td className="py-2">{status}</td>
+            <td className="py-2">
+                <select className="btn-primary rounded-3 pb-1" defaultValue={status} onChange={handleChange}>
                     <option value="Decline">Decline</option>
                     <option value="Pending">Pending</option>
                     <option value="Approve">Approve</option>
                 </select>
             </td>
-            <td>
-                <button className="btn btn-danger"
+            <td className="py-2">
+                <button className="btn-danger rounded-3 px-3"
                     onClick={handleDeleteOrder}>Delete
                 </button>
             </td>
