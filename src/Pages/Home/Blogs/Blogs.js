@@ -7,7 +7,9 @@ import imgFour from '../../../watch-img/COVER7.jpg';
 
 const Blogs = () => {
     return (
-        <div className="container">
+        <div className="container" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="3000">
             <div className="row g-0 my-5">
                 <div className="col-6 imgContainer">
                     <img src={imgOne} alt="" className="blogHero pe-md-1 pe-1" />

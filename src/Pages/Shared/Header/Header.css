@@ -66,7 +66,18 @@
 .navbar-nav li a:hover {
   color: #FFC107;
 }
+/* .nav-menu {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
 
+.nav-menu.active {
+  background: #6668f4;
+  left: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+  z-index: 1;
+} */
 /* Responsive Navbar Styles*/
 .navbar-toggler {
   border: 0;

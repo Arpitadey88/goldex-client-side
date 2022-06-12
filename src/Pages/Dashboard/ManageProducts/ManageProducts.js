@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-caverns-46584.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -11,7 +11,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure,you want to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://powerful-caverns-46584.herokuapp.com/products/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -28,7 +28,7 @@ const ManageProducts = () => {
     return (
         <div id="manageOrders">
             <h2 className="py-2 text-center">Total Products : {products.length}</h2>
-            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 py-2">
+            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 py-2 pb-md-4">
                 {
                     products?.map(product =>
                         <div key={product._id} style={{ width: '270px', height: '390px' }} className='card p-0 col mx-auto'>

@@ -28,27 +28,27 @@ const Dashboard = () => {
                 <div className=" row rounded-3">
                     <div style={{
                         backgroundColor: 'aliceBlue'
-                    }} className="col-md-3">
-                        <Link style={{ textDecoration: "none", color: '#1E3163' }} to={"/dashboard"}><h5 className='ms-2 pt-4 pb-3'>Dashboard</h5></Link>
+                    }} className="col-md-3 col-sm-2">
+                        <Link style={{ textDecoration: "none", color: '#1E3163' }} to={"/dashboard"}><h5 className='ms-md-2 pt-4 pb-3'>Dashboard</h5></Link>
                         <hr />
                         {
                             admin ? <div>
-                                <Link style={{ textDecoration: "none", color: '#1E3163'}} to={`/dashboard/manageOrder`}><h5 className='ms-2 py-3'>Manage All Order</h5></Link>
+                                <Link style={{ textDecoration: "none", color: '#1E3163'}} to={`/dashboard/manageOrder`}><h5 className='ms-md-2 py-3'>Manage All Order</h5></Link>
                                 <hr />
-                                <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/addProduct`}><h5 className='ms-2 py-3'>Add New Product</h5></Link>
+                                <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/addProduct`}><h5 className='ms-md-2 py-3'>Add New Product</h5></Link>
                                 <hr />
-                                <Link style={{ textDecoration: "none" , color: '#1E3163'}} to={`/dashboard/manageProducts`}><h5 className='ms-2 py-3'>Manage Products</h5></Link>
+                                <Link style={{ textDecoration: "none" , color: '#1E3163'}} to={`/dashboard/manageProducts`}><h5 className='ms-md-2 py-3'>Manage Products</h5></Link>
                                 <hr />
-                                <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/makeAdmin`}><h5 className='ms-2 py-3'>Make Admin</h5></Link>
+                                <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/makeAdmin`}><h5 className='ms-md-2 py-3'>Make Admin</h5></Link>
                                 <hr />
                             </div>
                                 :
                                 <div>
-                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/myOrder`}><h5 className='ms-2 py-3'>My Order</h5></Link>
+                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/myOrder`}><h5 className='ms-md-2 py-3'>My Order</h5></Link>
                                     <hr />
-                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/payment`}><h5 className='ms-2 py-3'>Payment</h5></Link>
+                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/payment`}><h5 className='ms-md-2 py-3'>Payment</h5></Link>
                                     <hr />
-                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/addReviews`}><h5 className='ms-2 py-3'>Add Feedback</h5></Link>
+                                    <Link style={{ textDecoration: "none", color: '#1E3163' }} to={`/dashboard/addReviews`}><h5 className='ms-md-2 py-3'>Add Feedback</h5></Link>
                                     <hr />
                                 </div>
                         }
@@ -61,7 +61,7 @@ const Dashboard = () => {
 
                     <div  style={{
                         backgroundColor: 'aliceBlue', borderLeft:'2px solid #D3DEDC'
-                    }}  className="col-md-9">
+                    }}  className="col-md-9 col-sm-10">
                         <Outlet></Outlet>
                     </div>
                 </div>

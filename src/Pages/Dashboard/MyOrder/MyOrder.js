@@ -13,9 +13,9 @@ const MyOrder = ({
             <td>{product.name}</td>
             <td>{email}</td>
             <td>{product.price}</td>
-            <td>{status}</td>
+            <td className="text-primary">{status}</td>
             <td>
-                <button className="btn btn-danger"
+                <button className="btn-danger rounded-3 px-3"
                     onClick={handleDeleteOrder}> Delete
                 </button>
             </td>

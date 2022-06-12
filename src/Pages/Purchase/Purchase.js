@@ -66,8 +66,6 @@ const Purchase = () => {
         );
     }
 
-
-
     return (
         <div id="purchase" className="rounded-2 px-3 mt-5 container">
             <h1 className="text-center fw-bold pt-4 " style={{ color: '#111b36' }} >Details Information</h1>

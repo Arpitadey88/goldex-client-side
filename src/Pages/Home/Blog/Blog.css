@@ -99,11 +99,11 @@
 
 .btn-design {
   color: white !important;
-  background-color: rgb(220, 24, 24);
+  background-color: orange;
 }
 
 .barDesign {
-  color: rgb(220, 24, 24) !important;
+  color: orange !important;
   margin-top: -15px;
   padding-right: 5px;
 

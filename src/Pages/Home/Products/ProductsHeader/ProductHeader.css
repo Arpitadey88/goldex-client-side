@@ -1,0 +1,78 @@
+.btnHeader{
+    padding: 5px 40px;
+    border-radius: 20px;
+    border: 1px solid orange;
+    color:#000000;
+    background: transparent;
+    text-decoration: none;
+    margin-right:20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.btnHeader:hover {
+    background: #111b36;
+    color: white;
+    font-weight: 700;
+}
+
+/* .bgColor{
+    background-color: grey;
+} */
+.dropDown{
+    background: #fffa65;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 0px 5px;
+}
+
+.activeBtn {
+    background: orange;
+    color: white;
+    font-weight: 500;
+}
+
+@media (max-width:499px){
+    .btnHeader{
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .displayDesign{
+        display: inline!important;
+    }
+    .dBlock{
+    background-color: #d3d3d34d;
+    color: black;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 30%;    
+    margin: 1%;
+    display: inline-block;
+    text-align: center;
+}
+.bgColor{
+    background-color: transparent;
+
+}
+}
+
+@media (min-width:500px) and (max-width:800px){
+    .displayDesign{
+        display: inline!important;
+    }
+    .dBlock{
+    background-color: #d3d3d34d;
+    color: black;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 30%;    
+    margin: 1%;
+    display: inline-block;
+    padding: 0!important;
+    text-align: center;
+}
+.bgColor{
+    background-color: transparent;
+
+}
+}
