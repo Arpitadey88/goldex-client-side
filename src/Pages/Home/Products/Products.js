@@ -66,7 +66,7 @@ const Products = () => {
             </div>
 
 
-            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 mx-1 py-md-5 py-2">
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4 mx-1 py-md-5 py-2">
                 {
                     Products?.map(watch => <Product
                         key={watch._id}
